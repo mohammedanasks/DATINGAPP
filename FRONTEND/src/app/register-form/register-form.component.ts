@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output, } from '@angular/core';
+import { Toast, ToastrService } from 'ngx-toastr';
 import { AccountService } from '../AppServicess/account.service';
 
 
@@ -12,15 +13,16 @@ export class RegisterFormComponent implements OnInit {
   model:any={};
   @Output() CancelRegister=new EventEmitter()
 
-  constructor(private service:AccountService) { }
+  constructor(private service:AccountService,private toastservice :ToastrService) { }
 
   ngOnInit(): void {
   }
 
   Register(){
     this.service.Register(this.model).subscribe(response=>{
-      console.log(response)
       this.Cancel()
+    },error=>{
+      this.toastservice.error(error.error)
     })
   }
 
