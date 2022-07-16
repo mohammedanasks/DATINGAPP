@@ -1,0 +1,10 @@
+
+
+.form-control{
+    height: 30px;
+    margin-top: 5px;
+}
+
+.dropdown-menu ,.ropdown-item{
+    cursor: pointer;
+}

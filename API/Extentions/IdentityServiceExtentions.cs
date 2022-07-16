@@ -22,7 +22,10 @@ namespace API.Extentions
                     ValidateAudience=false
 
                 };
+
+                
             });
+            return services;
 
          }
     }
